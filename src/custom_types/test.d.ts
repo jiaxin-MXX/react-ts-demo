@@ -25,3 +25,18 @@ declare module 'test' {
     }
     export type func = (...any) => void
 }
+//路由的配置
+declare module 'router'{
+    //设置 组件的props的传递内容
+    export interface props{
+        children?: React.ReactNode,
+        [propsName:string]:any
+    }
+
+    export interface routeObj {
+        path:string,
+        component:React.FC,
+        redirect?:string,
+        children?:Array<routeObj>
+    }
+}

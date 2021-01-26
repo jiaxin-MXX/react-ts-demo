@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/reset.css';
 import App from './app';
-import Context from "./compoments/Context";
+import Context from "./context/Context";
 import { myClass } from "test";
+import { BrowserRouter as Router } from 'react-router-dom'
+
 
 let shareObj:myClass = {
   personList:[],
@@ -24,7 +26,9 @@ let shareObj:myClass = {
 
 ReactDOM.render(
   <Context.Provider value={shareObj}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Context.Provider>,
   document.getElementById('root')
 );
